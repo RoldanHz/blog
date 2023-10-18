@@ -1,0 +1,46 @@
+ERROR - 2023-10-08 00:52:17 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\blog2\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\xampp\htdocs\blog2\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'blog', 3306, '', 0)
+#1 C:\xampp\htdocs\blog2\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\blog2\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\blog2\app\Controllers\PostController.php(12): CodeIgniter\Database\BaseConnection->query('select c.catego...')
+#4 C:\xampp\htdocs\blog2\system\CodeIgniter.php(919): App\Controllers\PostController->ejercicio01()
+#5 C:\xampp\htdocs\blog2\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PostController))
+#6 C:\xampp\htdocs\blog2\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\blog2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\blog2\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\blog2\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\blog2\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\blog2\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\blog2\app\Controllers\PostController.php(12): CodeIgniter\Database\BaseConnection->query('select c.catego...')
+#3 C:\xampp\htdocs\blog2\system\CodeIgniter.php(919): App\Controllers\PostController->ejercicio01()
+#4 C:\xampp\htdocs\blog2\system\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PostController))
+#5 C:\xampp\htdocs\blog2\system\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\blog2\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\blog2\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2023-10-08 00:52:17 --> Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\PostController.php(12): CodeIgniter\Database\BaseConnection->query('select c.category, p.id, p.title, u.username, p.created_at from categories as c right join posts as p on p.category= c.id left join users as u on u.id=p.autor where p.created_at between "2023/01/01" and "2023/12/31"')
+ 3 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\PostController->ejercicio01()
+ 4 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PostController))
+ 5 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\blog2\\public\\index.php')
+CRITICAL - 2023-10-08 01:14:45 --> Undefined array key "EMAIL"
+in APPPATH\Views\posts\ejercicio04.php on line 17.
+ 1 APPPATH\Views\posts\ejercicio04.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "EMAIL"', 'C:\\xampp\\htdocs\\blog2\\app\\Views\\posts\\ejercicio04.php', 17)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\blog2\\app\\Views\\posts\\ejercicio04.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1188): CodeIgniter\View\View->render('posts/ejercicio04', [], true)
+ 5 APPPATH\Controllers\PostController.php(43): view('posts/ejercicio04', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(919): App\Controllers\PostController->ejercicio04()
+ 7 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PostController))
+ 8 SYSTEMPATH\CodeIgniter.php(353): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\blog2\\public\\index.php')
