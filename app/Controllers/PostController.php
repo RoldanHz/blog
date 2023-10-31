@@ -9,6 +9,7 @@ class PostController extends BaseController
     public function ejercicio01()
     {
         $db = \Config\Database::connect();
+
         $posts = $db->query('select c.category, p.id, p.title, u.username, p.created_at from categories as c right join posts as p on p.category= c.id 
         left join users as u on u.id=p.autor where p.created_at between "2023/01/01" and "2023/12/31"')->getResultArray();
         $data = ['posts' => $posts];

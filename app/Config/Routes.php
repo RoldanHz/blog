@@ -16,5 +16,4 @@ $routes->get('posts/ejercicio04', 'PostController::ejercicio04');
 $routes->get('posts/ejercicio05', 'PostController::ejercicio05');
 
 
-$routes->get('database-export', 'ExportController::index');
-$routes->post('export-database', 'ExportController::exportDatabase');
+$routes->get('exportar', 'DescargaController::descargaBD');
